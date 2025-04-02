@@ -1,29 +1,96 @@
 #pondBox {
-  border: 2px solid blue;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
+  position: relative;
   width: 40%;
+  height: 50%;
+  padding-top: 0;
 }
 #background {
-  border: 2px solid red;
-  z-index: 1;
-  box-sizing: border-box;
   position: absolute;
-  width: 39.5%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding-top: 0;
 }
 #weather {
-  height: 35rem;
+  height: 55%;
   width: 100%;
 }
 #fish {
   opacity: 0.4;
   width: 100%;
   transform: rotateX(60deg);
+  padding-bottom: 0;
 }
 #pond {
-  height: 40%;
+  height: 100%;
   padding: 0;
   z-index: 1;
   object-fit: contain;
+}
+#foreground {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding-top: 0;
+}
+#fern1 {
+  opacity: 0.3;
+  height: 91%;
+  width: 30%;
+  animation-name: fern1;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+}
+#topfore {
+  height: 38%;
+  width: 100%;
+}
+#bottomfore {
+  height: 43%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+#bottom-R-F {
+  height: 90%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+#frog1 {
+  opacity: 1;
+  height: 20%;
+  width: 35%;
+}
+#waterfall {
+  height: 90%;
+  width: 45%;
+}
+#shrub1 {
+  width: 100%;
+  height: 35%;
+}
+
+@keyframes fern1 {
+  0% {
+    opacity: 0.3;
+    transform: rotate(0deg);
+  }
+  25% {
+    opacity: 0.2;
+    transform: rotate(-1deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotate(1deg);
+  }
+  100% {
+    opacity: 0.3;
+    transform: rotate(0deg);
+  }
 }
