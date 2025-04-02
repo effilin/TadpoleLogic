@@ -1,0 +1,28 @@
+.card: {
+    border: 2px solid #232a23;
+    borderRadius: 5;
+    display: "flex";
+    flexDirection: "column";
+    justifyContent: "center";
+    width: 350;
+    height: 250;
+    shadowColor: "#505850";
+    shadowOffset: {
+      width: 3,
+      height: 3
+    };
+    backgroundColor: "#e6e7dd";
+    margin: 3
+  },
+  artImg: {
+    height: 180,
+    width: 150,
+    borderWidth: 2,
+    borderColor: "#232a23",
+    borderRadius: 5,
+    margin: 3,
+  },
+  title: {
+    display: "flex",
+  },
+});
