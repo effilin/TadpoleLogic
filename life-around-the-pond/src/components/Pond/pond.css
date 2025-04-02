@@ -1,9 +1,29 @@
 #pondBox {
   border: 2px solid blue;
-  box-sizing: "content-box";
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   width: 40%;
 }
 #background {
+  border: 2px solid red;
   z-index: 1;
-  position: "absolute";
+  box-sizing: border-box;
+  position: absolute;
+  width: 39.5%;
+}
+#weather {
+  height: 35rem;
+  width: 100%;
+}
+#fish {
+  opacity: 0.4;
+  width: 100%;
+  transform: rotateX(60deg);
+}
+#pond {
+  height: 40%;
+  padding: 0;
+  z-index: 1;
+  object-fit: contain;
 }

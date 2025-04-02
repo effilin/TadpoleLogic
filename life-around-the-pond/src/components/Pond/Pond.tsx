@@ -9,7 +9,7 @@ export default function Pond() {
         <div id='weather'></div>
         <img id='fish' src={Fish} alt='fish swimming'></img>
       </div>
-      <img id='pond' src={PondPic} alt='black and white pond scene'></img>
+      <img id='pond' src={PondPic} alt='black and white pond scene' />
     </div>
   );
 }
