@@ -1,17 +1,13 @@
-import "./App.css";
-import Pond from "./components/Pond/Pond";
-import Sky from "./components/Sky";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
   return (
-    <>
-      <Sky>
-        <div className='container'>
-          <h1> lets get this redone</h1>
-          <Pond />
-        </div>
-      </Sky>
-    </>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/about' element={<About />} />
+    </Routes>
   );
 }
 
