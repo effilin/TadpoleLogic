@@ -8,10 +8,10 @@ type CardProps = {
 
 export default function Card({ title, artUrl, description }: CardProps) {
   return (
-    <div className='card'>
-      <h2>{title}</h2>
-      <div>
-        <img src={{ uri: artUrl }} className='artImg' />
+    <div id='card'>
+      <h2 id='title'>{title}</h2>
+      <div id='imgbox'>
+        <img src={artUrl} id='artImg' />
         <h2>{description}</h2>
       </div>
     </div>

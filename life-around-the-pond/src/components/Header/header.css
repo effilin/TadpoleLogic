@@ -1,6 +1,9 @@
 #mainText {
   font-family: "Bona Nova SC", serif;
   font-weight: 700;
-  font-style: normal;
+  font-style: large;
   text-align: center;
+}
+#header {
+  width: 100%;
 }
