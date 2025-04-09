@@ -1,0 +1,42 @@
+#btn-container {
+  height: 3rem;
+  padding: 0 1%;
+  margin: 2%;
+  border: 2px solid grey;
+  border-radius: 10%;
+  cursor: pointer;
+}
+#btn-title {
+  position: relative;
+  text-align: center;
+  border: 2px solid black;
+  width: 100%;
+  height: 100%;
+}
+/* variants */
+.btn-primary {
+  background-color: rgb(182, 216, 230);
+  color: rgb(18, 18, 65);
+}
+.btn-primary:hover {
+  background-color: rgb(134, 207, 238);
+}
+.btn-secondary {
+  background-color: rgb(18, 18, 65);
+  color: rgb(182, 216, 230);
+}
+.btn-secondary:hover {
+  background-color: rgb(49, 49, 68);
+}
+
+.btn-danger {
+  background-color: rgb(218, 29, 5);
+  color: rgb(231, 231, 231);
+}
+.btn-danger:hover {
+  background-color: rgb(212, 78, 61);
+}
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
