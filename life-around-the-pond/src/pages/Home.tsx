@@ -18,7 +18,9 @@ export default function Home() {
           <Header />
           <div className='container'>
             <Pond />
-            <Card {...props} />
+            <div className='container'>
+              <Card {...props} />
+            </div>
           </div>
         </div>
       </Sky>
