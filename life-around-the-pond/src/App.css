@@ -12,7 +12,6 @@
   width: 100%;
 }
 .containerC {
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
   height: 90vw;

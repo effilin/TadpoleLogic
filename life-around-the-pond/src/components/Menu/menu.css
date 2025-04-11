@@ -1,0 +1,13 @@
+#nav-menu {
+  border: 2px solid #232a23;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  height: 20%;
+  background-color: rgb(241, 233, 221);
+  box-sizing: content-box;
+  margin: 3%;
+  box-shadow: 5px 5px rgba(67, 68, 67, 0.55);
+}
