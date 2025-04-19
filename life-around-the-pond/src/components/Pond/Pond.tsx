@@ -3,6 +3,7 @@ import PondPic from "../../assets/Images/pond.png";
 import Fern1 from "../../assets/Images/fern1.png";
 import Frog1 from "../../assets/Images/frog1.gif";
 import "./pond.css";
+import UpperPool from "./UpperPool";
 
 export default function Pond() {
   return (
@@ -16,7 +17,10 @@ export default function Pond() {
         <div id='topfore'></div>
         <div id='bottomfore'>
           <img id='fern1' src={Fern1} alt='green fern' />
-          <div id='waterfall'></div>
+          <div id='waterfall'>
+            <UpperPool />
+            <div></div>
+          </div>
           <div id='bottom-R-F'>
             <div id='shrub1'></div>
             <div></div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import Card from "../reusable/Card/Card";
 import "./carousel.css";
@@ -20,8 +20,6 @@ export default function Carousel({ slideList }: { slideList: Art[] }) {
     }
     console.log(`prev slide: ${slide}`);
   };
-
-  const slideLeft = () => {};
 
   const nextSlide = () => {
     if (slide === slideList.length - 1) {

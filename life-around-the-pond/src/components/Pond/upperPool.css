@@ -1,0 +1,53 @@
+#colorPool {
+  position: relative;
+  overflow: hidden;
+  opacity: 0.5;
+  height: 50%;
+  clip-path: polygon(
+    60% 16%,
+    50% 20%,
+    53% 48%,
+    90% 59%,
+    75% 66%,
+    78% 70%,
+    100% 82%,
+    88% 89%,
+    85% 87%,
+    61% 87%,
+    61% 100%,
+    53% 97%,
+    48% 88%,
+    27% 80%,
+    20% 70%,
+    0% 58%,
+    0% 50%,
+    45% 31%,
+    43% 16%
+  );
+}
+
+.colors {
+  position: absolute;
+  z-index: 2;
+  height: 2%;
+  width: 20%;
+  border-radius: 20%;
+  opacity: 0.3;
+  animation-name: twinkle;
+  animation-duration: 4s;
+  animation-delay: calc(var(--index) * 0.4s);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+.colors:hover {
+  transform: rotateX(150deg);
+}
+@keyframes twinkle {
+  from {
+    transform: scale(1) translateX(0%);
+  }
+  to {
+    transform: scale(3) translateX(7%);
+  }
+}
