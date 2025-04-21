@@ -1,52 +1,67 @@
 #colorPool {
   position: relative;
   overflow: hidden;
-  opacity: 0.5;
+  opacity: 0.4;
   height: 55%;
   clip-path: polygon(
-    60% 14%,
-    52% 22%,
+    50% 5%,
+    63% 5%,
+    55% 7%,
+    55% 14%,
+    53% 18%,
     53% 43%,
     80% 48%,
-    94% 53%,
+    94% 55%,
     75% 60%,
-    78% 65%,
-    100% 73%,
+    78% 68%,
+    100% 74%,
     100% 79%,
     95% 84%,
     94% 93%,
-    87% 95%,
-    87% 78%,
-    61% 78%,
+    86% 95%,
+    87% 80%,
+    62% 79%,
+    61% 80%,
     61% 100%,
     50% 95%,
-    50% 80%,
-    44% 78%,
-    35% 75%,
-    25% 70%,
-    15% 62%,
+    50% 81%,
+    42% 80%,
+    37% 75%,
+    24% 71%,
+    17% 62%,
     0% 58%,
     0% 50%,
     15% 43%,
-    25% 40%,
-    45% 31%,
-    43% 16%
+    12% 40%,
+    33% 36%,
+    34% 31%,
+    45% 29%,
+    43% 16%,
+    43% 10%
   );
-  animation-name: shadows;
-  animation-duration: 10s;
-  animation-delay: 4s;
+}
+.glimmer {
+  position: absolute;
+  z-index: 2;
+  height: 2%;
+  width: 6%;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: rgb(182, 181, 120);
+  animation-name: sunshine;
+  animation-duration: 100s;
+  animation-delay: calc(var(--index) * 3s);
   animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in;
 }
-
 .colors {
   position: absolute;
   z-index: 2;
   height: 2%;
   width: 20%;
   border-radius: 20%;
-  opacity: 0.4;
+  opacity: 0.6;
   animation-name: twinkle;
   animation-duration: 4s;
   animation-delay: calc(var(--index) * 0.4s);
@@ -58,74 +73,20 @@
 @keyframes twinkle {
   from {
     transform: scale(1) translateX(0%);
-    opacity: 0.4;
+    opacity: 0.7;
   }
   to {
     transform: scale(3) translateX(7%);
     opacity: 0.1;
   }
 }
-@keyframes shadows {
+@keyframes sunshine {
   from {
-    clip-path: polygon(
-      60% 14%,
-      52% 22%,
-      53% 43%,
-      80% 48%,
-      94% 53%,
-      75% 60%,
-      78% 65%,
-      100% 73%,
-      100% 79%,
-      95% 84%,
-      94% 93%,
-      87% 95%,
-      87% 78%,
-      61% 78%,
-      61% 100%,
-      50% 95%,
-      50% 80%,
-      44% 78%,
-      35% 75%,
-      25% 70%,
-      15% 62%,
-      0% 58%,
-      0% 50%,
-      15% 43%,
-      25% 40%,
-      45% 31%,
-      43% 16%
-    );
+    opacity: 0.5;
+    background-color: rgb(182, 181, 120);
   }
   to {
-    clip-path: polygon(
-      60% 14%,
-      52% 22%,
-      53% 43%,
-      80% 48%,
-      94% 53%,
-      75% 60%,
-      78% 65%,
-      100% 73%,
-      100% 79%,
-      95% 84%,
-      94% 93%,
-      87% 95%,
-      87% 78%,
-      61% 78%,
-      61% 100%,
-      50% 95%,
-      50% 80%,
-      44% 78%,
-      35% 75%,
-      25% 70%,
-      15% 62%,
-      0% 58%,
-      0% 50%,
-      15% 43%,
-      25% 40%,
-      45% 31%,
-      43% 16%
-    );
+    opacity: 0.3;
+    background-color: rgb(252, 251, 223);
   }
 }

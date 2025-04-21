@@ -4,6 +4,7 @@ import Fern1 from "../../assets/Images/fern1.png";
 import Frog1 from "../../assets/Images/frog1.gif";
 import "./pond.css";
 import UpperPool from "./UpperPool";
+import LowerPool from "./LowerPool";
 
 export default function Pond() {
   return (
@@ -19,7 +20,7 @@ export default function Pond() {
           <img id='fern1' src={Fern1} alt='green fern' />
           <div id='waterfall'>
             <UpperPool />
-            <div></div>
+            <LowerPool />
           </div>
           <div id='bottom-R-F'>
             <div id='shrub1'></div>

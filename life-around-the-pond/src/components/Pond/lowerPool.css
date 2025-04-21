@@ -1,0 +1,100 @@
+#lowerContainer {
+  border: 2px solid blue;
+  height: 100%;
+  margin-top: -5%;
+}
+#lower1 {
+  border: 2px solid green;
+  height: 30%;
+  position: relative;
+  overflow: hidden;
+}
+.drops {
+  position: absolute;
+  z-index: 2;
+  margin-top: 1.5%;
+  height: 7px;
+  width: 1px;
+  border-radius: 50%;
+  opacity: 0.01;
+  background-color: rgb(70, 188, 243);
+  animation-name: waterfall;
+  animation-duration: 2s;
+  animation-delay: calc(var(--index) * 0.3s);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+.drops2 {
+  position: absolute;
+  z-index: 1;
+  margin-top: 1.5%;
+  height: 7px;
+  width: 1px;
+  border-radius: 50%;
+  opacity: 0.01;
+  background-color: rgb(70, 188, 243);
+  animation-name: waterfall;
+  animation-duration: 2s;
+  animation-delay: calc(var(--index) * 0.3s);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+.spray {
+  position: absolute;
+  z-index: 3;
+  top: 82%;
+  height: 2%;
+  width: 2%;
+  border-radius: 50%;
+  opacity: 0.2;
+  background-color: rgb(204, 232, 245);
+  animation-name: spray;
+  animation-duration: 6s;
+  animation-delay: calc(var(--index) * 3s);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+.spray2 {
+  position: absolute;
+  z-index: 3;
+  top: 80%;
+  height: 2%;
+  width: 2%;
+  border-radius: 50%;
+  opacity: 0.2;
+  background-color: rgb(204, 232, 245);
+  animation-name: spray;
+  animation-duration: 6s;
+  animation-delay: calc(var(--index) * 2s);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+@keyframes waterfall {
+  0% {
+    opacity: 0.1;
+    background-color: rgb(70, 188, 243);
+    transform: translateY(0rem);
+  }
+
+  100% {
+    opacity: 1;
+    background-color: rgb(233, 243, 248);
+    transform: translateY(98rem);
+  }
+}
+
+@keyframes spray {
+  0% {
+    opacity: 0.2;
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(9, 8);
+  }
+}
