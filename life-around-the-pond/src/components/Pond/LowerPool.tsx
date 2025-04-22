@@ -18,7 +18,7 @@ export default function LowerPool() {
         spray2.style.setProperty("--index", `${droplets * 0.2}`);
         const canvas = document.querySelector("#lower1");
         const locationY1 = Math.floor(Math.random() * (61 - 51 + 1));
-        const locationY2 = Math.floor(Math.random() * (92 - 85 + 1));
+        const locationY2 = Math.floor(Math.random() * (90 - 83 + 1));
         drops.classList.add("drops");
         drops2.classList.add("drops2");
         spray.classList.add("spray");
@@ -26,7 +26,7 @@ export default function LowerPool() {
         drops.style.left = `${locationY1 + 51}%`;
         drops2.style.left = `${locationY2 + 85}%`;
         spray.style.left = `${locationY1 + 51}%`;
-        spray2.style.left = `${locationY2 + 85}%`;
+        spray2.style.left = `${locationY2 + 83}%`;
         canvas?.appendChild(drops);
         canvas?.appendChild(drops2);
         canvas?.appendChild(spray);

@@ -1,10 +1,9 @@
 #lowerContainer {
-  border: 2px solid blue;
   height: 100%;
   margin-top: -5%;
 }
 #lower1 {
-  border: 2px solid green;
+  margin-top: 1%;
   height: 30%;
   position: relative;
   overflow: hidden;
@@ -44,7 +43,7 @@
 .spray {
   position: absolute;
   z-index: 3;
-  top: 82%;
+  top: 83%;
   height: 2%;
   width: 2%;
   border-radius: 50%;
@@ -60,7 +59,7 @@
 .spray2 {
   position: absolute;
   z-index: 3;
-  top: 80%;
+  top: 81%;
   height: 2%;
   width: 2%;
   border-radius: 50%;
@@ -84,7 +83,7 @@
   100% {
     opacity: 1;
     background-color: rgb(233, 243, 248);
-    transform: translateY(98rem);
+    transform: translateY(90rem);
   }
 }
 
@@ -95,6 +94,6 @@
   }
   100% {
     opacity: 0;
-    transform: scale(9, 8);
+    transform: scale(8, 6);
   }
 }

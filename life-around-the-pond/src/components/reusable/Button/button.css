@@ -1,26 +1,27 @@
 #btn-container {
   height: 2rem;
+  width: 8rem;
   padding: 0 1%;
   margin: 2%;
-  border: 2px solid grey;
-  border-radius: 10%;
+  border: 1px solid navy;
+  border-radius: 7%;
   cursor: pointer;
+  box-shadow: 2px 2px 2px rgb(184, 181, 181);
 }
 #btn-title {
   position: relative;
   text-align: center;
-  border: 2px solid black;
   font-family: "Bona Nova SC", serif;
   width: 100%;
   height: 100%;
 }
 /* variants */
 .btn-primary {
-  background-color: rgb(182, 216, 230);
-  color: rgb(18, 18, 65);
+  background-color: rgb(2, 18, 87);
+  color: rgb(219, 219, 253);
 }
 .btn-primary:hover {
-  background-color: rgb(134, 207, 238);
+  background-color: rgb(38, 54, 124);
 }
 .btn-secondary {
   background-color: rgb(18, 18, 65);

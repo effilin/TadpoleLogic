@@ -1,6 +1,6 @@
 #mainText {
   font-family: "Bona Nova SC", serif;
-  font-weight: 700;
+  font-weight: 900;
   font-style: large;
   text-align: center;
 }
@@ -8,7 +8,11 @@
   width: 100%;
   background: linear-gradient(to bottom, rgb(5, 7, 85), rgba(37, 91, 161, 0));
   border-bottom: 5px double grey;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 10% 70% 30%;
+}
+.menuBox {
+  position: relative;
+  justify-self: center;
+  align-self: center;
 }

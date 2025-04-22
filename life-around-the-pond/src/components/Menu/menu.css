@@ -1,6 +1,4 @@
 #nav-menu {
-  border: 2px solid #232a23;
-  border-radius: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
