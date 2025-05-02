@@ -17,7 +17,7 @@ export default function Header() {
       <h1 id='mainText'>{headerText}</h1>
       <div className='menuBox'>
         <MyButton title='Menu' onClick={click} variant='primary' />
-        {modalControl && <div> Hey </div>}
+        {modalControl && <div id='navMenu'> Hey </div>}
       </div>
     </header>
   );

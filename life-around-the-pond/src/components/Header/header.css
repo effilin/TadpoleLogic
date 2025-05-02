@@ -16,3 +16,10 @@
   justify-self: center;
   align-self: center;
 }
+#navMenu {
+  position: absolute;
+  border: 1px solid white;
+  box-shadow: 5px, 5px, 5px white;
+  height: 10%;
+  width: 5%;
+}
