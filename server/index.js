@@ -15,6 +15,8 @@ app.get("/test-db", async (req, res) => {
     res.status(500).send("database connection failed");
   }
 });
+const uploadRoutes = require("./routes/upload");
+app.use("/api", uploadRoutes);
 
 app.listen(PORT, () => {
   console.log(
