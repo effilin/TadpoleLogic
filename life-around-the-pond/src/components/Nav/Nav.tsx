@@ -1,4 +1,8 @@
 import "./nav.css";
 export default function Nav() {
-  <nav className='nav'></nav>;
+  return (
+    <nav className='nav'>
+      <a href='../../'>About</a>
+    </nav>
+  );
 }
