@@ -16,7 +16,9 @@ app.get("/test-db", async (req, res) => {
   }
 });
 const uploadRoutes = require("./routes/upload");
+const fetchImageRoute = require("./routes/getImages");
 app.use("/api", uploadRoutes);
+app.use("/api/images", fetchImageRoute);
 
 app.listen(PORT, () => {
   console.log(
