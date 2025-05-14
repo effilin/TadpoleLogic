@@ -4,14 +4,16 @@ const { cloudinary } = require("../utils/cloudinary");
 
 router.get("/", async (req, res) => {
   console.log("fetching file hit");
+  const myUrl = process.env.CLOUDINARY_URL;
   try {
-    const myUrl = process.env.CLOUDINARY_URL;
     const { publicId } = req.query;
-    console.log(publicId);
-    console.log(`${myUrl}/${publicId}/fetch`);
-    const results = await cloudinary.image(`${myUrl}/${publicId}`);
-    console.log(results);
-    res.json(results);
+    if (!publicId) {
+      return res.status(400).json({ error: "missing publicID" });
+    }
+    const ImageUrl = `${myUrl}/${publicId}/fetch`;
+    const results = await cloudinary.image(`${myUrl}/${publicId}/fetch`);
+    console.log(`image fetched: ${ImageUrl}`);
+    res.json({ ImageUrl, results });
   } catch (error) {
     console.error("fetch error");
     res.status(500).json({ error: "failed fetch error getImages.js" });
