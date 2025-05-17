@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const pool = require("./db");
 const app = express();
+const cors = require("cors");
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
@@ -17,6 +18,7 @@ app.get("/test-db", async (req, res) => {
 });
 const uploadRoutes = require("./routes/upload");
 const fetchImageRoute = require("./routes/getImages");
+app.use(cors());
 app.use("/api", uploadRoutes);
 app.use("/api/images", fetchImageRoute);
 
