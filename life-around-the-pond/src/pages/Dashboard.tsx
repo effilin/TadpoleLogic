@@ -1,4 +1,4 @@
-import CreateBlogForm from "../components/BlogForm/createBlogForm";
+import CreateBlogForm from "../components/BlogForm/CreateBlogForm";
 
 export default function Dashboard() {
   return (
