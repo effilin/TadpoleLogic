@@ -3,7 +3,7 @@ import "./button.css";
 type MyButtonProps = {
   title: string;
   onClick?: () => void;
-  variant?: "primary" | "secondary" | "danger";
+  variant?: "primary" | "secondary" | "danger" | "clear";
   disabled?: boolean;
 };
 

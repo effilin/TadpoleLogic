@@ -1,19 +1,17 @@
-#sky {
-  display: "flex";
+#myApp {
   height: 100%;
   width: 100%;
+  border: 2px solid blue;
+}
+#sky {
+  display: "flex";
 }
 .container {
   box-sizing: content-box;
-  border: 2px solid blue;
   display: flex;
+  justify-content: center;
+  align-content: center;
   flex-direction: row;
-  height: 90vw;
-  width: 100%;
-}
-.containerC {
-  display: flex;
-  flex-direction: column;
   height: 90vw;
   width: 100%;
 }

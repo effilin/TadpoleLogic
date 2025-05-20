@@ -1,11 +1,11 @@
 import "../App.css";
-
+import Carousel from "../components/Carousel/Carousel";
+import Header from "../components/Header/header";
 import Pond from "../components/Pond/Pond";
 import Sky from "../components/Sky";
 import { useEffect, useState } from "react";
-import Welcome from "../components/welcome/Welcome";
 
-export default function Home() {
+export default function Blog() {
   //
   const [imageUrl, setImageUrl] = useState(
     "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
@@ -33,15 +33,37 @@ export default function Home() {
     };
     fetchImage();
   }, []);
+  const props = [
+    {
+      title: " My Card",
+      Url: imageUrl,
+      description: "MonaLisa",
+    },
+    {
+      title: " 2 Card",
+      Url: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+      description: "MonaLisa",
+    },
+    {
+      title: " 3 Card",
+      Url: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+      description: "MonaLisa",
+    },
+  ];
 
   return (
     <>
-      <div className='container'>
-        <Pond />
-        <div className='container'>
-          <Welcome />
+      <Sky>
+        <div className='containerC'>
+          <Header />
+          <div className='container'>
+            <Pond />
+            <div className='container'>
+              <Carousel slideList={props} />
+            </div>
+          </div>
         </div>
-      </div>
+      </Sky>
     </>
   );
 }
