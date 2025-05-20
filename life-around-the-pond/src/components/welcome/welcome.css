@@ -1,7 +1,7 @@
 * {
-  font-family: Bona Nova SC Static;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: "Roboto Mono", monospace;
+  line-height: 1;
+  font-weight: 700;
 }
 .welcome {
   border-radius: 20px;
@@ -9,7 +9,8 @@
   flex-direction: column;
   box-sizing: content-box;
   background-color: rgb(236, 235, 235);
-  height: 20%;
+  box-shadow: 2px 2px 2px rgb(94, 114, 136);
+  height: fit-content;
   width: 75%;
   margin: 10%;
 }
@@ -25,10 +26,48 @@ p {
   color: rgb(31, 30, 30);
 }
 .bottom-welcome {
-  border: 2px solid blue;
   box-sizing: content-box;
+  position: relative;
   margin: 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.bottom-container-welcome {
+  display: flex;
+  justify-content: space-around;
+}
+.modals {
+  box-sizing: content-box;
+  background-color: rgb(236, 235, 235);
+  border: 2px solid blue;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgb(94, 114, 136);
+  position: absolute;
+  transform-origin: top;
+  transition: transform 1s ease-in-out;
+  width: auto;
+  height: fit-content;
+  margin: 2% 6%;
+  padding: 1% 7%;
+}
+.modals.close {
+  transform: scale(0);
+  overflow: hidden;
+}
+.modals.open {
+  transform: scale(1);
+  overflow: visible;
+}
+.sign-in,
+.sign-up {
+  box-sizing: content-box;
+  background-color: rgb(236, 235, 235);
+  border: 2px solid blue;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgb(94, 114, 136);
+  width: auto;
+  height: fit-content;
+  margin: 2% 6%;
+  padding: 1% 7%;
 }
