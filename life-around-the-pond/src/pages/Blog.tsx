@@ -53,17 +53,9 @@ export default function Blog() {
 
   return (
     <>
-      <Sky>
-        <div className='containerC'>
-          <Header />
-          <div className='container'>
-            <Pond />
-            <div className='container'>
-              <Carousel slideList={props} />
-            </div>
-          </div>
-        </div>
-      </Sky>
+      <div className='container'>
+        <Carousel slideList={props} />
+      </div>
     </>
   );
 }

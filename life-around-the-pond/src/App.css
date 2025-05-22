@@ -15,3 +15,73 @@
   height: 90vw;
   width: 100%;
 }
+.containerLeft {
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: fit-content;
+  width: 100%;
+  padding: 1% 5%;
+}
+.h1Container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 8vw;
+}
+.welcomeText {
+  position: absolute;
+  rotate: 1 1 0 30deg;
+  transform-origin: bottom;
+  text-shadow: 2px 2px 2px rgb(194, 255, 209);
+  color: rgb(3, 54, 15);
+  z-index: 3;
+}
+.header2 {
+  text-align: center;
+}
+.boxAbout1 {
+  display: flex;
+  flex-direction: row;
+  transform-style: preserve-3d;
+  height: 25vw;
+  padding: 2%;
+}
+.imgBox {
+  position: relative;
+  box-sizing: content-box;
+  width: 25%;
+  perspective: 1000px;
+}
+.imgInner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.img1,
+.img2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.imgBox:hover .imgInner {
+  transform: rotateY(180deg);
+}
+
+.img2 {
+  transform: rotateY(180deg);
+}
+.about1 {
+  width: 50%;
+  padding: 2%;
+  font: "Playfair Display", serif;
+  justify-content: center;
+}
+.frogImg {
+  border: 2px solid blue;
+  height: 90%;
+}

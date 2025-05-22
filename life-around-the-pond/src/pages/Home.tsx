@@ -1,17 +1,16 @@
 import "../App.css";
-
+import tadpole from "../assets/Images/tadpole.png";
 import Pond from "../components/Pond/Pond";
-import Sky from "../components/Sky";
-import { useEffect, useState } from "react";
+
 import Welcome from "../components/welcome/Welcome";
 
 export default function Home() {
   //
-  const [imageUrl, setImageUrl] = useState(
-    "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
-  );
+  //const [imageUrl, setImageUrl] = useState(
+  //  "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+  //);
   //
-  useEffect(() => {
+  /* useEffect(() => {
     console.log("fetching image");
     const fetchImage = async () => {
       const publicId = "woodworking_house1";
@@ -33,12 +32,17 @@ export default function Home() {
     };
     fetchImage();
   }, []);
-
+*/
   return (
     <>
       <div className='container'>
         <Pond />
-        <div className='container'>
+        <div className='containerLeft'>
+          <div className='h1Container'>
+            <h1 className='welcomeText'>Life Around the Pond</h1>
+            <img className='frogImg' src={tadpole} alt='tadpole logic frog' />
+          </div>
+          <h4 className='header2'>By Tadpole Logic and Gadget Girl </h4>
           <Welcome />
         </div>
       </div>

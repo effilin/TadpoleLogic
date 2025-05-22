@@ -6,10 +6,13 @@ import Blog from "./pages/Blog";
 import Sky from "./components/Sky";
 import Header from "./components/Header/header";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
+import Footer from "./components/Footer/footer";
 
 function App() {
   return (
     <div className='myApp'>
+      <ToastContainer />
       <Sky>
         <Header />
         <main className='contentArea'>
@@ -20,6 +23,7 @@ function App() {
             <Route path='/life-around-the-pond' element={<Blog />} />
           </Routes>
         </main>
+        <Footer />
       </Sky>
     </div>
   );

@@ -4,7 +4,7 @@ import "./header.css";
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
-  let headerText: string = "Life Around The Pond";
+  let headerText: string = "Life around the pond changes with the seasons";
   const [modalControl, setModalControl] = useState<Boolean>(false);
 
   const click = () => {
