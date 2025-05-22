@@ -5,22 +5,23 @@ const app = express();
 const cors = require("cors");
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json());
-
 app.get("/test-db", async (req, res) => {
   try {
     const result = await pool.query("SELECT NOW()");
     res.json(result.rows[0]);
   } catch (err) {
-    console.log(err);
+    console.log(err.message, err.stack);
     res.status(500).send("database connection failed");
   }
 });
 const uploadRoutes = require("./routes/upload");
 const fetchImageRoute = require("./routes/getImages");
+const signUp = require("./routes/signUp");
+app.use(express.json());
 app.use(cors());
 app.use("/api", uploadRoutes);
 app.use("/api/images", fetchImageRoute);
+app.use("/api/auth", signUp);
 
 app.listen(PORT, () => {
   console.log(
