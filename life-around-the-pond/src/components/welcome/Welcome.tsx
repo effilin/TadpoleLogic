@@ -2,6 +2,7 @@ import { useState } from "react";
 import MyButton from "../reusable/Button/Button";
 import "./welcome.css";
 import { toast } from "react-toastify";
+import { useUser } from "../../context/UserContext";
 
 export default function Welcome() {
   const [modalSignup, setModalSignUp] = useState<boolean>(false);
@@ -15,6 +16,7 @@ export default function Welcome() {
   const [password, setPassword] = useState<string>("");
   const [passwordConfirm, setPasswordConfirm] = useState<string>("");
   let modal: React.ReactNode = null;
+  const { login } = useUser();
 
   const errorToast = (msg: string) => {
     toast(msg);
@@ -91,6 +93,7 @@ export default function Welcome() {
       }
       successToast("welcome back!");
       localStorage.setItem("token", data.token);
+      login(data.token);
       console.log(data);
     } catch (err) {
       console.log(err);

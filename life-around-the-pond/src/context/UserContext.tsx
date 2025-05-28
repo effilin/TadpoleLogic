@@ -23,6 +23,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
         setUser(decoded);
       } catch (err) {
         console.error("invalid token", err);
+        localStorage.removeItem("token");
       }
     }
   }, []);
