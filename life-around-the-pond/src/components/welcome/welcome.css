@@ -3,6 +3,14 @@
   line-height: 1;
   font-weight: 700;
 }
+label {
+  display: flex;
+  justify-content: space-between;
+}
+input {
+  margin: 1%;
+  border-radius: 5px;
+}
 .welcome {
   position: relative;
   border-radius: 20px;
@@ -42,12 +50,12 @@ p {
 .modals {
   box-sizing: content-box;
   background-color: rgb(236, 235, 235);
-  border: 2px solid blue;
+  border: 2px solid grey;
   border-radius: 20px;
   box-shadow: 2px 2px 2px rgb(94, 114, 136);
   position: absolute;
   transform-origin: center;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   width: auto;
   height: fit-content;
   margin: 2% 6%;
@@ -56,17 +64,21 @@ p {
 .modals.close {
   transform: scale(0);
   overflow: hidden;
+  opacity: 0;
 }
 .modals.open {
   transform: scale(1);
-  overflow: visible;
+  overflow: 1;
 }
-.sign-in,
-.sign-up {
-}
-.form-signUp {
+.form-signUp,
+.form-signin {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 2%;
   margin: 1%;
+}
+.formButtonBox {
+  display: flex;
+  justify-content: space-between;
 }

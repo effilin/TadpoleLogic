@@ -108,6 +108,7 @@ export default function Welcome() {
       <div className='sign-up'>
         <h4>Sign-Up: </h4>
         <h5>Welcome to Tadpole-Logic's Life around the Pond</h5>
+        <h5></h5>
         <form className='form-signUp' onSubmit={handleSubmit}>
           <label>
             User Name:
@@ -135,24 +136,26 @@ export default function Welcome() {
               onChange={(e) => setPasswordConfirm(e.target.value)}
             />
           </label>
-          <button type='submit'>Sign up</button>
+          <div className='formButtonBox'>
+            <button type='submit'>Sign up</button>
+            <MyButton
+              title='Close'
+              onClick={() => {
+                setModalSignUp(!modalSignup);
+                setModalState(!modalState);
+                setSignInButtonDisable(!signInButtonDisable);
+              }}
+              variant='primary'
+            />
+          </div>
         </form>
-        <MyButton
-          title='Close'
-          onClick={() => {
-            setModalSignUp(!modalSignup);
-            setModalState(!modalState);
-            setSignInButtonDisable(!signInButtonDisable);
-          }}
-          variant='primary'
-        />
       </div>
     );
   } else if (modalSignIn) {
     modal = (
       <div className='sign-in'>
-        <p>SignIn</p>
-        <form className='form-signUp' onSubmit={handleLogin}>
+        <p>Sign In</p>
+        <form className='form-signIn' onSubmit={handleLogin}>
           <label>
             User Name:
             <input
@@ -170,17 +173,18 @@ export default function Welcome() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
-          <button type='submit'>Sign up</button>
+          <div className='formButtonBox'>
+            <button type='submit'>Sign up</button>
+            <MyButton
+              title='Close'
+              onClick={() => {
+                setModalSignIn(!modalSignIn);
+                setModalState(!modalState);
+                setSignUpButtonDisable(!signUpButtonDisable);
+              }}
+            />
+          </div>
         </form>
-        <MyButton
-          title='Close'
-          onClick={() => {
-            setModalSignIn(!modalSignIn);
-            setModalState(!modalState);
-            setSignUpButtonDisable(!signUpButtonDisable);
-          }}
-          variant='primary'
-        />
       </div>
     );
   }
