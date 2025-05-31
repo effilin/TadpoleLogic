@@ -8,10 +8,8 @@ import Header from "./components/Header/header";
 import "./App.css";
 import { ToastContainer } from "react-toastify";
 import Footer from "./components/Footer/footer";
-import { User } from "./types/User";
 
 function App() {
-  const user: User = {};
   return (
     <div className='myApp'>
       <ToastContainer />
@@ -21,7 +19,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/dashboard' element={<Dashboard user={user} />} />
+            <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/life-around-the-pond' element={<Blog />} />
           </Routes>
         </main>

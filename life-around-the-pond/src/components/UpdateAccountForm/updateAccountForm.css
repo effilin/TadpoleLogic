@@ -1,1 +1,14 @@
-import ''
+.update-account-container {
+  box-sizing: content-box;
+  background-color: rgb(236, 235, 235);
+  border: 2px solid grey;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgb(94, 114, 136);
+  position: absolute;
+  transform-origin: center;
+  transition: transform 0.5s ease-in-out;
+  width: auto;
+  height: fit-content;
+  margin: 2% 6%;
+  padding: 1% 7%;
+}
