@@ -17,11 +17,13 @@ app.get("/test-db", async (req, res) => {
 const uploadRoutes = require("./routes/upload");
 const fetchImageRoute = require("./routes/getImages");
 const signUp = require("./routes/signUp");
+const usersRoute = require("./routes/users");
 app.use(express.json());
 app.use(cors());
 app.use("/api", uploadRoutes);
 app.use("/api/images", fetchImageRoute);
 app.use("/api/auth", signUp);
+app.use("/api/users", usersRoute);
 
 app.listen(PORT, () => {
   console.log(

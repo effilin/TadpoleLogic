@@ -1,8 +1,8 @@
 const express = require("express");
-const bcrypt = require("bcryptjs");
 const router = express.Router();
 const pool = require("../db");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 const SECRET = process.env.JWT_SECRET;
 
@@ -29,6 +29,16 @@ router.post("/register", async (req, res) => {
   } catch (err) {
     console.log("fail at signUp.js/ post:", err.message);
     res.status(500).json({ error: "registration failed", err });
+  }
+});
+
+router.get("/", async (_req, res) => {
+  try {
+    const users = await pool.query("SELECT * FROM users");
+    res.json(users.rows);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("error retrieving users");
   }
 });
 
@@ -64,6 +74,30 @@ router.post("/login", async (req, res) => {
   } catch (err) {
     console.log("Login Error", err.message);
     res.status(500).json({ error: "Login failed" });
+  }
+});
+
+router.put("/:id", async (req, res) => {
+  const { username, profileImgUrl } = req.body;
+  try {
+    const updatedUser = await pool.query(
+      "UPDATE users SET user_name = $1, profile_image =$2 WHERE id =$3 RETURNING *",
+      [username, profileImgUrl, req.params.id]
+    );
+    res.json(updatedUser.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("error updating user");
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    await pool.query("DELETE FROM users WHERE id =$1", [req.params.id]);
+    res.send("User deleted");
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Error deleting user");
   }
 });
 
