@@ -3,6 +3,7 @@ const router = express.Router();
 const pool = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const userController = require("../controllers/userController");
 
 const SECRET = process.env.JWT_SECRET;
 
@@ -32,15 +33,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.get("/", async (_req, res) => {
-  try {
-    const users = await pool.query("SELECT * FROM users");
-    res.json(users.rows);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("error retrieving users");
-  }
-});
+router.get("/", userController.getAllUsers);
 
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
