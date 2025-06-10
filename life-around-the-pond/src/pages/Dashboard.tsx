@@ -46,7 +46,6 @@ export default function Dashboard() {
             <h2>Please sign In</h2>
           ) : (
             <div>
-              <h4 className='underline'>update account info:</h4>
               <h5>account created: {formattedDate} </h5>
               <h5>account updated at: </h5>
               <MyButton
