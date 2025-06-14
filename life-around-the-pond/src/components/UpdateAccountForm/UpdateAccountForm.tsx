@@ -37,27 +37,32 @@ export default function UpdateAccountForm({ onClose }: MyProps) {
   }, [profileImg]);
   return (
     <div className='update-account-container'>
-      <button onClick={onClose}>X</button>
-      <form encType='mutipart/form-data'>
-        <label>
-          Update Username
-          <input
-            type='text'
-            value={userName}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
+      <div className='formContainer'>
+        <button className='closebtn' onClick={onClose}>
+          X
+        </button>
 
-        <label>
-          Update Picture
-          <input
-            name='image'
-            type='file'
-            accept='image/png, image/jpeg'
-          ></input>
-        </label>
-        <button type='submit'> update account </button>
-      </form>
+        <form className='inputContainer' encType='mutipart/form-data'>
+          <label className='formLabel'>
+            Update Username
+            <input
+              type='text'
+              value={userName}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+
+          <label className='formLabel'>
+            Update Picture
+            <input
+              name='image'
+              type='file'
+              accept='image/png, image/jpeg'
+            ></input>
+          </label>
+          <button type='submit'> update account </button>
+        </form>
+      </div>
     </div>
   );
 }
