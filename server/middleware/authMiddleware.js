@@ -5,13 +5,15 @@ function authToken(req, res, next) {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
   if (!token) {
-    return res.sendStatus(401);
+    return res.sendStatus(401).json({ error: "no token provided" });
   }
-  jwt.verify(token, SECRET, (err, user) => {
-    if (err) return res.sendStatus(403);
-    req.user = user;
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
     next();
-  });
+  } catch (err) {
+    return res.sendStatus(403).json({ error: "invalid or expired token" });
+  }
 }
 
 module.exports = authToken;

@@ -4,6 +4,11 @@ const pool = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const userController = require("../controllers/userController");
+const authToken = require("../middleware/authMiddleware");
+const multer = require("multer");
+const upload = multer({ storage: multer.memoryStorage() });
+const cloudinary = require("../utils/cloudinary");
+const { UploadStream } = require("cloudinary");
 
 const SECRET = process.env.JWT_SECRET;
 
@@ -70,12 +75,32 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
-  const { username, profileImgUrl } = req.body;
+router.put("/update", authToken, upload.single("image"), async (req, res) => {
+  const userId = req.user.id;
+  const { user_name, profile_image } = req.body;
+  let secure_url;
+
+  if (!!profile_image) {
+    try {
+      cloudinary.api
+        .create_upload_preset({
+          name: user_name,
+          folder: "profileImgs",
+          allowed_formats: "jpg, png",
+        })
+        .then((uploadResult) => {
+          console.log(uploadResult);
+          secure_url = uploadResult.url;
+        });
+    } catch (err) {
+      res.status(500).json({ "error in cloudinary upload": err });
+    }
+  }
+
   try {
     const updatedUser = await pool.query(
       "UPDATE users SET user_name = $1, profile_image =$2 WHERE id =$3 RETURNING *",
-      [username, profileImgUrl, req.params.id]
+      [user_name, secure_url, userId]
     );
     res.json(updatedUser.rows[0]);
   } catch (err) {
