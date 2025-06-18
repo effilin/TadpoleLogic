@@ -1,40 +1,58 @@
 import "./updateAccountForm.css";
 import { useUser } from "../../context/UserContext";
-import { useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
+import { toast } from "react-toastify";
 type MyProps = {
   onClose: () => void;
 };
 export default function UpdateAccountForm({ onClose }: MyProps) {
   const { user } = useUser();
-  const [userName, setName] = useState(user?.username);
-  const [profileImg, setProfileImg] = useState(user?.profileImgUrl);
+  const [userName, setName] = useState<string>(user?.username || "");
+  const [profileImg, setProfileImg] = useState<File | string | null>(
+    user?.profileImgUrl || null
+  );
 
-  useEffect(() => {
-    async function handleImageUpdate(e: React.FormEvent) {
-      e.preventDefault();
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_BASE_URL}/api/users`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({}),
-          }
-        );
-        const data = await response.json();
-        if (!response.ok) {
-          console.log(data.error);
-          return;
-        }
-
-        console.log(data);
-      } catch (err) {
-        console.log(err);
-      }
+  const handleImageUpdate = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setProfileImg(e.target.files[0]);
     }
-  }, [profileImg]);
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("user_name", userName);
+    if (profileImg instanceof File) {
+      formData.append("profile_image", profileImg);
+    }
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/api/users`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
+          },
+          body: formData,
+        }
+      );
+      const data = await response.json();
+      if (response.ok) {
+        console.log("Profile Updated");
+        toast(" Profile Updated");
+      }
+      if (!response.ok) {
+        console.log(data.error);
+        return;
+      }
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className='update-account-container'>
       <div className='formContainer'>
@@ -42,7 +60,11 @@ export default function UpdateAccountForm({ onClose }: MyProps) {
           X
         </button>
 
-        <form className='inputContainer' encType='mutipart/form-data'>
+        <form
+          className='inputContainer'
+          encType='mutipart/form-data'
+          onSubmit={handleSubmit}
+        >
           <label className='formLabel'>
             Update Username
             <input
@@ -58,6 +80,7 @@ export default function UpdateAccountForm({ onClose }: MyProps) {
               name='image'
               type='file'
               accept='image/png, image/jpeg'
+              onChange={handleImageUpdate}
             ></input>
           </label>
           <button type='submit'> update account </button>
